@@ -1,8 +1,5 @@
-/* eslint-disable import/no-absolute-path */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable linebreak-style */
-import { DateTime } from './node_modules/luxon/src/luxon.js';
-import Book from './modules/book.js';
+import { DateTime } from '../node_modules/luxon/src/luxon.js';
+import Book from '../modules/book.js';
 import {
   time,
   styleOne,
@@ -14,7 +11,7 @@ import {
   button,
   bookTitle,
   bookAuthor,
-} from './modules/htmlElements.js';
+} from '../modules/htmlElements.js';
 
 let newBook = new Book(bookTitle.value, bookAuthor.value);
 
