@@ -25,7 +25,6 @@ button.addEventListener('click', (e) => {
 
     bookTitle.value = '';
     bookAuthor.value = '';
-    // newBook.refreshDOM;
   }
 });
 window.onload = newBook.refreshDOM;
