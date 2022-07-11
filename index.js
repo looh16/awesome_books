@@ -1,3 +1,5 @@
+/* eslint-disable import/no-absolute-path */
+/* eslint-disable import/no-unresolved */
 import { DateTime } from './node_modules/luxon/src/luxon.js';
 import Book from './modules/book.js';
 import {
