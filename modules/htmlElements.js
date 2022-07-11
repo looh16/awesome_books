@@ -1,8 +1,7 @@
-
-let bookTitle = document.getElementById('bookTitle');
-let bookAuthor = document.getElementById('bookAuthor');
+const bookTitle = document.getElementById('bookTitle');
+const bookAuthor = document.getElementById('bookAuthor');
 const bookList = document.getElementById('bookList');
-let button = document.getElementById('add');
+const button = document.getElementById('add');
 const time = document.getElementById('time');
 
 // grabbing lists
@@ -15,48 +14,50 @@ const addBook = document.getElementById('form');
 const List = document.getElementById('list');
 const contact = document.getElementById('contact');
 
-const style_one = (e) => {
-    // show focus color
-    list3.style.color = '#000';
-    list2.style.color = '#000';
-    list1.style.color = 'rgba(43, 64, 250,1)';
+const styleOne = () => {
+  // show focus color
+  list3.style.color = '#000';
+  list2.style.color = '#000';
+  list1.style.color = 'rgba(43, 64, 250,1)';
 
-    // navigation
-    List.classList.remove('hide-nav');
-    addBook.classList.add('hide-nav');
-    contact.classList.add('hide-nav');
+  // navigation
+  List.classList.remove('hide-nav');
+  addBook.classList.add('hide-nav');
+  contact.classList.add('hide-nav');
 };
 
-const style_two = (e) => {
-    list3.style.color = '#000';
-    list2.style.color = 'rgba(43, 64, 250,1)';
-    list1.style.color = '#000';
+const styleTwo = () => {
+  list3.style.color = '#000';
+  list2.style.color = 'rgba(43, 64, 250,1)';
+  list1.style.color = '#000';
 
-    addBook.classList.remove('hide-nav');
-    contact.classList.add('hide-nav');
-    List.classList.add('hide-nav');
+  addBook.classList.remove('hide-nav');
+  contact.classList.add('hide-nav');
+  List.classList.add('hide-nav');
 };
 
-const style_three = (e) => {
-    list3.style.color = 'rgba(43, 64, 250,1)';
-    list2.style.color = '#000';
-    list1.style.color = '#000';
+const styleThree = () => {
+  list3.style.color = 'rgba(43, 64, 250,1)';
+  list2.style.color = '#000';
+  list1.style.color = '#000';
 
-    contact.classList.remove('hide-nav');
-    List.classList.add('hide-nav');
-    addBook.classList.add('hide-nav');
+  contact.classList.remove('hide-nav');
+  List.classList.add('hide-nav');
+  addBook.classList.add('hide-nav');
 };
 
-export { bookTitle,
-         bookAuthor, 
-         bookList, 
-         button, 
-         time, 
-         list1,
-         list2,
-         list3,
-         style_one,
-         style_two,
-         style_three,
-         addBook,
-         contact};
+export {
+  bookTitle,
+  bookAuthor,
+  bookList,
+  button,
+  time,
+  list1,
+  list2,
+  list3,
+  styleOne,
+  styleTwo,
+  styleThree,
+  addBook,
+  contact,
+};

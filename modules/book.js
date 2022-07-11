@@ -1,48 +1,44 @@
-import { bookTitle, bookList } from './htmlElements.js';
+import { bookList } from './htmlElements.js';
 
 let allBooks = [];
 
+class Book {
+    static count = 1;
 
- class Book {
-
-    static count = 0;
-   
     constructor(name, author) {
-        this.id = ++this.constructor.count;
-        this.name = name;
-        this.author = author;
+      /* eslint-disable no-plusplus */
+      this.id = this.constructor.count++;
+      this.name = name;
+      this.author = author;
     }
 
     getBooks = () => {
-        const books = JSON.parse(localStorage.getItem('bookList'));
-        return books || [];
-      };
+      const books = JSON.parse(localStorage.getItem('bookList'));
+      return books || [];
+    };
 
     addBook = (book) => {
-        const books = this.getBooks();
-        books.unshift(book);
-        localStorage.setItem('bookList', JSON.stringify(books));
-        this.refreshDOM;
-      };
+      const books = this.getBooks();
+      books.unshift(book);
+      localStorage.setItem('bookList', JSON.stringify(books));
+    };
 
      refreshDOM = () => {
-       
-        allBooks = JSON.parse(localStorage.getItem('bookList'));
-        allBooks.forEach((book) => {
-          let bookDetails = `"${book.name}" by ${book.author}`;
-          const bookId = book.id;
-          const removeBtn = document.createElement('button');
-          this.btn(removeBtn);
-          const newBook = document.createElement('tr');
-          const newTitle = document.createElement('td');
-          newTitle.innerText = bookDetails;
-          newBook.id = bookId;
-          newBook.appendChild(newTitle);
-          newBook.appendChild(removeBtn);
-          bookList.appendChild(newBook);
-        });
-
-      };
+       allBooks = JSON.parse(localStorage.getItem('bookList'));
+       allBooks.forEach((book) => {
+         const bookDetails = `"${book.name}" by ${book.author}`;
+         const bookId = book.id;
+         const removeBtn = document.createElement('button');
+         this.btn(removeBtn);
+         const newBook = document.createElement('tr');
+         const newTitle = document.createElement('td');
+         newTitle.innerText = bookDetails;
+         newBook.id = bookId;
+         newBook.appendChild(newTitle);
+         newBook.appendChild(removeBtn);
+         bookList.appendChild(newBook);
+       });
+     };
 
       btn = (element) => {
         element.innerText = 'Remove';
@@ -54,7 +50,6 @@ let allBooks = [];
           location.reload();
         });
       }
-      
 }
 
 export default Book;

@@ -1,47 +1,44 @@
 import { DateTime } from './node_modules/luxon/src/luxon.js';
-import book from './modules/book.js';
+import Book from './modules/book.js';
 import {
-    time,
-    style_one,
-    style_two,
-    style_three,
-    list1,
-    list2,
-    list3,
-    button,
-    addBook,
-    contact
+  time,
+  styleOne,
+  styleTwo,
+  styleThree,
+  list1,
+  list2,
+  list3,
+  button,
+  bookTitle,
+  bookAuthor,
 } from './modules/htmlElements.js';
 
-let newBook = new book(bookTitle.value, bookAuthor.value);
-
+let newBook = new Book(bookTitle.value, bookAuthor.value);
 
 button.addEventListener('click', (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    newBook = new book(bookTitle.value, bookAuthor.value);
-    
-    if (!( bookTitle.value.length < 3 || bookAuthor.value.length < 3)) {
-      
-        newBook.addBook(newBook);
+  newBook = new Book(bookTitle.value, bookAuthor.value);
 
-        bookTitle.value = '';
-        bookAuthor.value = '';
-        newBook.refreshDOM;
-    }
+  if (!(bookTitle.value.length < 3 || bookAuthor.value.length < 3)) {
+    newBook.addBook(newBook);
+
+    bookTitle.value = '';
+    bookAuthor.value = '';
+    // newBook.refreshDOM;
+  }
 });
 window.onload = newBook.refreshDOM;
 
-list1.addEventListener('click', style_one, newBook.refreshDOM);
+list1.addEventListener('click', styleOne, newBook.refreshDOM);
 
-list2.addEventListener('click', style_two);
+list2.addEventListener('click', styleTwo);
 
-list3.addEventListener('click', style_three);
+list3.addEventListener('click', styleThree);
 
 const setDate = () => {
-    const date = DateTime.now();
-    time.innerHTML = date.toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
+  const date = DateTime.now();
+  time.innerHTML = date.toLocaleString(DateTime.DATETIME_FULL_WITH_SECONDS);
 };
 
 window.setInterval(setDate, 1000);
-
