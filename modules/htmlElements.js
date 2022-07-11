@@ -15,14 +15,48 @@ const addBook = document.getElementById('form');
 const List = document.getElementById('list');
 const contact = document.getElementById('contact');
 
+const style_one = (e) => {
+    // show focus color
+    list3.style.color = '#000';
+    list2.style.color = '#000';
+    list1.style.color = 'rgba(43, 64, 250,1)';
+
+    // navigation
+    List.classList.remove('hide-nav');
+    addBook.classList.add('hide-nav');
+    contact.classList.add('hide-nav');
+};
+
+const style_two = (e) => {
+    list3.style.color = '#000';
+    list2.style.color = 'rgba(43, 64, 250,1)';
+    list1.style.color = '#000';
+
+    addBook.classList.remove('hide-nav');
+    contact.classList.add('hide-nav');
+    List.classList.add('hide-nav');
+};
+
+const style_three = (e) => {
+    list3.style.color = 'rgba(43, 64, 250,1)';
+    list2.style.color = '#000';
+    list1.style.color = '#000';
+
+    contact.classList.remove('hide-nav');
+    List.classList.add('hide-nav');
+    addBook.classList.add('hide-nav');
+};
+
 export { bookTitle,
          bookAuthor, 
          bookList, 
          button, 
          time, 
-         List,
-         list1, 
+         list1,
          list2,
          list3,
+         style_one,
+         style_two,
+         style_three,
          addBook,
          contact};

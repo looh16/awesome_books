@@ -1,9 +1,12 @@
 import { bookTitle, bookList } from './htmlElements.js';
 
+let allBooks = [];
+
+
  class Book {
 
     static count = 0;
-
+   
     constructor(name, author) {
         this.id = ++this.constructor.count;
         this.name = name;
@@ -19,26 +22,20 @@ import { bookTitle, bookList } from './htmlElements.js';
         const books = this.getBooks();
         books.unshift(book);
         localStorage.setItem('bookList', JSON.stringify(books));
+        this.refreshDOM;
       };
 
      refreshDOM = () => {
-        let allBooks = [];
+       
         allBooks = JSON.parse(localStorage.getItem('bookList'));
         allBooks.forEach((book) => {
-          bookTitle = `"${book.name}" by ${book.author}`;
+          let bookDetails = `"${book.name}" by ${book.author}`;
           const bookId = book.id;
           const removeBtn = document.createElement('button');
-          removeBtn.innerText = 'Remove';
-          removeBtn.classList.add('show-color');
-          removeBtn.addEventListener('click', (e) => {
-            const { id } = e.target.parentNode;
-            allBooks = allBooks.filter((book) => book.id.toString() !== id.toString());
-            localStorage.setItem('bookList', JSON.stringify(allBooks)); // eslint-disable-next-line
-            location.reload();
-          });
+          this.btn(removeBtn);
           const newBook = document.createElement('tr');
           const newTitle = document.createElement('td');
-          newTitle.innerText = bookTitle;
+          newTitle.innerText = bookDetails;
           newBook.id = bookId;
           newBook.appendChild(newTitle);
           newBook.appendChild(removeBtn);
@@ -46,6 +43,17 @@ import { bookTitle, bookList } from './htmlElements.js';
         });
 
       };
+
+      btn = (element) => {
+        element.innerText = 'Remove';
+        element.classList.add('show-color');
+        element.addEventListener('click', (e) => {
+          const { id } = e.target.parentNode;
+          allBooks = allBooks.filter((book) => book.id.toString() !== id.toString());
+          localStorage.setItem('bookList', JSON.stringify(allBooks)); // eslint-disable-next-line
+          location.reload();
+        });
+      }
       
 }
 
