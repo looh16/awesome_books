@@ -22,7 +22,7 @@ Any kind of browser.
     4. Run index.html file using any browser in your local environment
     
 ### ScreamShot
-    ![image](https://{github.com/looh16/awesome_books/blob/main/images/AwesomeBook.png})
+    ![AwesomeBook](https://user-images.githubusercontent.com/21173712/179366468-6c496106-6c9b-4df4-b4a4-d4516896d6d5.png)
 
 # Author 1
    - GitHub: [@looh16](https://github.com/looh16/Hello-Microverse)
