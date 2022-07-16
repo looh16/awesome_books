@@ -21,7 +21,7 @@ Any kind of browser.
     3. Choose the file with a name index.html file
     4. Run index.html file using any browser in your local environment
     
-### ScreamShot
+### ScreenShot
     ![AwesomeBook](https://user-images.githubusercontent.com/21173712/179366468-6c496106-6c9b-4df4-b4a4-d4516896d6d5.png)
 
 # Author 1
