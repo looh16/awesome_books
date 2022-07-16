@@ -16,7 +16,7 @@ To get a local copy up and running follow these simple example steps.
 Any kind of browser. 
 
 ### Setup:
-    1. Clone the repository (git clone https://github.com/Ney2/AwesomeBook.git)
+    1. Clone the repository (git clone https://github.com/looh16/awesome_books)
     2. Then open the folder in your local environment 
     3. Choose the file with a name index.html file
     4. Run index.html file using any browser in your local environment
