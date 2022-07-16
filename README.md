@@ -22,7 +22,7 @@ Any kind of browser.
     4. Run index.html file using any browser in your local environment
     
 ### ScreenShot
-    <img src="images/AwesomeBook.png">
+    ![AwesomeBook](https://user-images.githubusercontent.com/21173712/179367388-f5afe201-4bc4-4621-99ee-6329a153a9ea.png)
 
 # Author 1
    - GitHub: [@looh16](https://github.com/looh16/Hello-Microverse)
