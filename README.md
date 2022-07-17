@@ -20,9 +20,6 @@ Any kind of browser.
     2. Then open the folder in your local environment 
     3. Choose the file with a name index.html file
     4. Run index.html file using any browser in your local environment
-    
-### ScreenShot
-     [![website](.images/AwesomeBook.png)]
 
 # Author 1
    - GitHub: [@looh16](https://github.com/looh16/Hello-Microverse)
